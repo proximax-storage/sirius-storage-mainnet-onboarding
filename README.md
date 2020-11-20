@@ -1,4 +1,4 @@
-# Sirius Storage Testnet Community Onboarding
+# Sirius Storage Mainnet Community Onboarding
 
 - [Basic Overview](#basic-overview)
 - [Requirements](#os-requirements)

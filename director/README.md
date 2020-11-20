@@ -68,29 +68,29 @@ API server successfuly started on /ip4/0.0.0.0/tcp/6366
 
 ## Transfer XPX to the SDN Account
 
-You may use web wallet at https://bctestnetwallet.xpxsirius.io to transfer XPX from your existing testnet account or you may get XPX from https://bctestnetfaucet.xpxsirius.io/
+You may use web wallet at https://wallet.xpxsirius.io to transfer XPX from your existing XPX account
 
 ## Exchange market
 
 Before creating a drive, the owner must ensure that there is sufficient balance in the drive account to pay for the space for at least 1 billing period (1 month / 172800 ).
 
-The storage units `SO` mosaic ID in Sirius Chain Testnet is `6de2c609655d3dbd`.  
-The streaming units `SM` mosaic ID in Sirius Chain Testnet is `69dd64ed4343011c`
+The storage units `SO` mosaic ID in Sirius Chain Mainnet is `42f11df73d00296a`.  
+The streaming units `SM` mosaic ID in Sirius Chain Mainnet is `7e332c41b04e4e05`
 
 You can see the exchange offers in the blockchain with the following API:
 ```
 # offers to sell SO units for XPX
-https://bctestnet1.brimstone.xpxsirius.io/exchange/sell/6de2c609655d3dbd
+https://arcturus.xpxsirius.io/exchange/sell/42f11df73d00296a
 
 # offers to buy SO units for XPX
-https://bctestnet1.brimstone.xpxsirius.io/exchange/buy/6de2c609655d3dbd
+https://arcturus.xpxsirius.io/exchange/buy/42f11df73d00296a
 
 
 # offers to sell SM units for XPX
-https://bctestnet1.brimstone.xpxsirius.io/exchange/sell/69dd64ed4343011c
+https://arcturus.xpxsirius.io/exchange/sell/7e332c41b04e4e05
 
 # offers to buy SM units for XPX
-https://bctestnet1.brimstone.xpxsirius.io/exchange/buy/69dd64ed4343011c
+https://arcturus.xpxsirius.io/exchange/buy/7e332c41b04e4e05
 ```
 
 Please see [Exchange Market](https://storagedocs.xpxsirius.io/docs/built_in_features/exchange/) for more information about ProximaX Exchange Market.
@@ -104,7 +104,7 @@ When creating a drive contract, the SDN will search the exchange market for the 
 Example: create drive contract 100MB for 1 month
 
 ```bash
-docker exec drive dfms contract compose 100 1
+docker exec drive dfms-client contract compose 100 1
 # it will take several minutes before a response
 {
         "drive": "baegaajaiaqjcbfh7iec4q2hwd62eclc7x3qbs67wqxcuo5ycbizw7ubwrstjmpte",
@@ -129,7 +129,7 @@ docker exec drive dfms contract compose 100 1
 Drive contract for the account can be found in the Sirius Chain.
 
 Example:
-`https://bctestnet1.brimstone.xpxsirius.io/account/98e28034b56f29edd469f19cbf3362ce1a820435931ae483daabfc2369ee1053/drive`
+`https://arcturus.xpxsirius.io/account/98e28034b56f29edd469f19cbf3362ce1a820435931ae483daabfc2369ee1053/drive`
 
 Note: `98e28034b56f29edd469f19cbf3362ce1a820435931ae483daabfc2369ee1053` is the public key of the SDN account
 
