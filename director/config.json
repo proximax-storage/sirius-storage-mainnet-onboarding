@@ -1,0 +1,76 @@
+{
+    "Storage": {
+        "Datastore": {
+            "Retries": 6,
+            "RetryDelay": 200
+        },
+        "Blockstore": {
+            "Cache": {
+                "BloomFilterSize": 524288,
+                "BloomFilterHashes": 7,
+                "ARCCacheSize": 65536
+            },
+            "HashOnRead": true
+        },
+        "Mounts": [{
+                "Key": "/blocks",
+                "Path": "blocks",
+                "Type": "flatfs"
+            },
+            {
+                "Key": "/",
+                "Path": "datastore",
+                "Type": "badger"
+            }
+        ]
+    },
+    "Replication": {
+        "Disabled": true,
+        "Strong": false
+    },
+    "Network": {
+        "PubSub": {
+            "Gossip": false,
+            "Signing": true,
+            "StrictVerification": true
+        },
+        "Addresses": {
+            "Public": [],
+            "P2P": [
+                "/ip4/0.0.0.0/tcp/63666",
+                "/ip6/::/tcp/63666"
+            ],
+            "API": [
+                "/ip4/0.0.0.0/tcp/6366"
+            ],
+            "Bootstrap": [
+                "/dns4/srn1.dfmsr.io/tcp/64666/p2p/12D3L7AV9hBw3cqUTExPS6wYf7NXGiQ2o3UDbrpwUTgukJrkpPnT",
+                "/dns4/srn2.dfmsr.io/tcp/64666/p2p/12D3L7AV9bYwKnbqcRgQRqTUru7Bp5PaM7N62ZYHZSRX9qaxSzmg",
+                "/dns4/srn3.dfmsr.io/tcp/64666/p2p/12D3L7AV15bGtuuYGdkyu2LvDxwAqEog9U5UnYVdUoi36x9diYND"
+            ]
+        },
+        "Relay": true,
+        "RelayHop": false,
+        "RelayAuto": true,
+        "NATAuto": false,
+        "NATPortMap": true,
+        "QUIC": false,
+        "ConnectionManagerLow": 60,
+        "ConnectionManagerHigh": 90,
+        "ConnectionManagerGrace": 20000000000,
+        "ClientMode": true,
+        "Reconnection": {
+            "Enabled": true,
+            "Intervals": 3000000000,
+            "Count": 5
+        }
+    },
+    "Ledger": {
+        "Urls": [
+            "http://arcturus.xpxsirius.io:3000",
+            "http://aldebaran.brimstone.xpxsirius.io:3000",
+            "http://betelgeuse.brimstone.xpxsirius.io:3000",
+            "http://bigcalvin.brimstone.xpxsirius.io:3000"
+        ]
+    }
+}
