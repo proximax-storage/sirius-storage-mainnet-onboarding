@@ -137,7 +137,7 @@ tools/pk2ks-util -dir replicator/keystore -key <PRIVATE_KEY>
 # tools/pk2ks-util -dir ../replicator/keystore -key 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
 
 # the utility creates a file call "main".  You should be able to see it if you run a ls command
-ls -al director/keystore/
+ls -al replicator/keystore/
 
 # clear your shell history to safeguard your private key.  
 history -c
