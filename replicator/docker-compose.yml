@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  replicator:
+    image: proximax/dfms-replicator:v0.8.1
+    ports:
+      - 6466:6466
+      - 64666:64666
+    volumes:
+      - ./:/root/.dfms-replicator:rw
+    restart: on-failure:3
+    entrypoint: /usr/bin/dfms-replicator
