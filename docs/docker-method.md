@@ -57,9 +57,10 @@ Run the following commands and replace `<PRIVATE_KEY>` with [SDN account](../REA
 
 ```bash
 chmod +x tools/pk2ks-util
-tools/pk2ks-util -dir replicator/keystore -key <PRIVATE_KEY>
+mkdir director/keystore
+tools/pk2ks-util -dir director/keystore -key <PRIVATE_KEY>
 # Example: if your private key is 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
-# tools/pk2ks-util -dir ../replicator/keystore -key 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
+# tools/pk2ks-util -dir ../director/keystore -key 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
 ```
 
 ### Start SDN
@@ -124,6 +125,7 @@ Run the following commands and replace `<PRIVATE_KEY>` with [SRN account](../REA
 
 ```bash
 chmod +x tools/pk2ks-util
+mkdir replicator/keystore
 tools/pk2ks-util -dir replicator/keystore -key <PRIVATE_KEY>
 # Example: if your private key is 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
 # tools/pk2ks-util -dir ../replicator/keystore -key 69b24c083026fed041e0db68ee5a471fb8656575b317db632c12b82be1fbea7c
