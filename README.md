@@ -75,14 +75,16 @@ For other platforms, you may refer to [this page](https://command-not-found.com/
 
 Download setup script:
 
-```
+```bash
 curl -fsSL raw.githubusercontent.com/proximax-storage/sirius-storage-mainnet-onboarding/main/scripts/setup-director.sh -o setup-director.sh
+
+chmod +x setup-director.sh
 ```
 
 Run the setup script:
 
-```
-sh setup-director.sh
+```bash
+./setup-director.sh
 ```
 
 *The setup script should have setup the SDN files in `~/.dfms-client/` and started the `dfms-client` systemd service*
@@ -90,20 +92,20 @@ sh setup-director.sh
 Check status of SDN service:
 
 ```bash
-systemctl status dfms-client.service
+systemctl --user status dfms-client.service
 ```
 
 View SDN logs:
 
 ```bash
-journalctl -u dfms-client.service
+journalctl --user -u dfms-client.service
 ```
 
 **SDN CLI**:
 
 The `dfms-client` binary is installed in `/usr/local/bin`.  It should be available in the command line:
 
-```
+```bash
 which dfms-client
 dfms-client version
 dfms-client net id
@@ -115,14 +117,16 @@ See [CLI](https://storagedocs.xpxsirius.io/docs/cli/dfms/dfms/) for `dfms-client
 
 Download setup script:
 
-```
+```bash
 curl -fsSL raw.githubusercontent.com/proximax-storage/sirius-storage-mainnet-onboarding/main/scripts/setup-replicator.sh -o setup-replicator.sh
+
+chmod +x setup-replicator.sh
 ```
 
 Run the setup script:
 
-```
-sh setup-replicator.sh
+```bash
+./setup-replicator.sh
 ```
 
 *The setup script should have setup the SRN files in `~/.dfms-replicator/` and started the `dfms-replicator` systemd service*
@@ -130,13 +134,13 @@ sh setup-replicator.sh
 Check status of SRN service:
 
 ```bash
-systemctl status dfms-replicator.service
+systemctl --user status dfms-replicator.service
 ```
 
 View SRN logs:
 
 ```bash
-journalctl -u dfms-replicator.service
+journalctl --user -u dfms-replicator.service
 ```
 
 **SRN CLI**
