@@ -3,7 +3,6 @@ Description=ProximaX Sirius Storage DFMS Client
 
 [Service]
 Type=simple
-User=USERNAME
 ExecStart=/usr/local/bin/dfms-client
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
