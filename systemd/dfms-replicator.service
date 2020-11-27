@@ -1,0 +1,9 @@
+[Unit]
+Description=ProximaX Sirius Storage DFMS Client
+
+[Service]
+Type=simple
+User=USERNAME
+ExecStart=/usr/local/bin/dfms-replicator
+[Install]
+WantedBy=multi-user.target
