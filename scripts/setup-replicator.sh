@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
 
 command_exists() {
@@ -32,11 +32,13 @@ fi
 
 cmd='dfms-replicator'
 
+service_dir="$HOME/.config/systemd/user"
+
 git_raw_url='raw.githubusercontent.com/proximax-storage/sirius-storage-mainnet-onboarding'
 
 git_branch='main'
 
-ks_dir="$(eval echo ~$user)/.$cmd/keystore"
+ks_dir="$HOME/.$cmd/keystore"
 
 util_path="/tmp/pk2ks-util"
 
@@ -50,7 +52,7 @@ curl -fsSL https://$git_raw_url/$git_branch/tools/pk2ks-util -o $util_path
 chmod +x $util_path
 
 echo "Store private key into keystore"
-read -p "Enter Private Key: " priv_key
+read -sp "Enter Private Key: " priv_key
 
 mkdir -p $ks_dir
 $util_path -dir $ks_dir -key $priv_key
@@ -60,13 +62,11 @@ $sh_c "curl -fsSL https://sirius-storage-dfms.s3-ap-southeast-1.amazonaws.com/la
 $sh_c "chmod +x /usr/local/bin/$cmd"
 
 echo "Setting up systemd"
-$sh_c "curl -fsSL https://$git_raw_url/$git_branch/systemd/$cmd.service -o /lib/systemd/system/$cmd.service"
+curl -fsSL https://$git_raw_url/$git_branch/systemd/$cmd.service -o $service_dir/$cmd.service
 
-$sh_c "sed -i "s/USERNAME/$user/g" /lib/systemd/system/$cmd.service"
+systemctl --user daemon-reload"
 
-$sh_c "systemctl daemon-reload"
-
-echo "Starting $cmd"
-$sh_c "systemctl start $cmd.service"
+echo "Enable and start $cmd"
+systemctl --user enable --now $cmd.service
 
 echo "Done"
