@@ -62,6 +62,7 @@ $sh_c "curl -fsSL https://sirius-storage-dfms.s3-ap-southeast-1.amazonaws.com/la
 $sh_c "chmod +x /usr/local/bin/$cmd"
 
 echo "Setting up systemd"
+mkdir -p $service_dir
 curl -fsSL https://$git_raw_url/$git_branch/systemd/$cmd.service -o $service_dir/$cmd.service
 
 systemctl --user daemon-reload"
