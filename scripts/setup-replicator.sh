@@ -5,6 +5,14 @@ command_exists() {
         command -v "$@" > /dev/null 2>&1
 }
 
+if ! command_exists wat2wasm; then
+	cat >&2 <<-'EOF'
+	Error: Sirius Storage Node needs "wat2wasm" to execute Supercontract.
+	We are unable to find "wat2wasm" available.
+	EOF
+	exit 1
+fi
+
 user="$(id -un 2>/dev/null || true)"
 
 sh_c='sh -c'
