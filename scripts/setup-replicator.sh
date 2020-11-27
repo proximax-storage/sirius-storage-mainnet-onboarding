@@ -65,7 +65,7 @@ echo "Setting up systemd"
 mkdir -p $service_dir
 curl -fsSL https://$git_raw_url/$git_branch/systemd/$cmd.service -o $service_dir/$cmd.service
 
-systemctl --user daemon-reload"
+systemctl --user daemon-reload
 
 echo "Enable and start $cmd"
 systemctl --user enable --now $cmd.service
