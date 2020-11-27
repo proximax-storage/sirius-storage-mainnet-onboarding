@@ -53,7 +53,7 @@ chmod +x $util_path
 
 echo "Store private key into keystore"
 read -sp "Enter Private Key: " priv_key
-
+echo
 mkdir -p $ks_dir
 $util_path -dir $ks_dir -key $priv_key
 
