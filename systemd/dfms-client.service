@@ -1,0 +1,8 @@
+[Unit]
+Description=ProximaX Sirius Storage DFMS Client
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/dfms-client
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  director:
+    image: proximax/dfms-client:v0.8.1
+    ports:
+      - 6366:6366
+      - 63666:63666
+    volumes:
+      - ./:/root/.dfms-client:rw
+    restart: on-failure:3
+    entrypoint: /usr/bin/dfms-client
