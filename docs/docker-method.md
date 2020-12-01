@@ -143,22 +143,22 @@ ls -al replicator/keystore/
 history -c
 ```
 
-### Start SDN
+### Start SRN
 
 ```bash
 cd replicator
 docker-compose up -d
 ```
 
-### Check if SDN is running
+### Check if SRN is running
 
 `docker-compose ps`
 
-### Stop SDN
+### Stop SRN
 
 `docker-compose down`
 
-### Restart the SDN
+### Restart the SRN
 
 `docker-compose restart`
 
